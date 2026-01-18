@@ -19,7 +19,7 @@ An end-to-end machine learning pipeline to predict customer churn, including:
 - Orchestration with Airflow
 - Containerization with Docker
 
-👉 See `/churn-ml-pipeline`
+👉 See `/churn-prediction`
 
 *(More projects will be added soon)*
 
