@@ -1,0 +1,28 @@
+# Environment
+.env
+*.env
+
+# Data outputs
+data/processed_dataset.csv
+data/holdout_indices.csv
+data/X_test.csv
+data/y_test.csv
+predicciones_churn.csv
+
+# Model outputs
+modelos/
+logs/
+explicability/
+explicability_run*/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# SQL temp
+sql/
