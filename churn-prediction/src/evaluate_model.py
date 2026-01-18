@@ -9,7 +9,7 @@ import seaborn as sns
 
 from db_utils import insert_json  # 👈 Asegúrate de que este módulo esté en tu PYTHONPATH
 
-def evaluar_modelo(
+def evaluate_model(
     run_id,
     cleaned_path="/opt/airflow/data/dataset_limpio.csv",
     model_path="/opt/airflow/modelos/random_forest_model.pkl",
@@ -99,3 +99,4 @@ def evaluar_modelo(
     insert_json("model_metrics", metricas, extra_fields={"run_id": run_id})
 
     return metricas
+
