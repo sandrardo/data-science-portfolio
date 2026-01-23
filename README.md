@@ -25,7 +25,7 @@ An end-to-end machine learning pipeline to predict customer churn, including:
 Python · Pandas · Scikit-learn · Docker · Airflow · MLflow · SQL
 
 
-## Exploratory Analysis of Railway Ticket Prices
+### 2. Exploratory Analysis of Railway Ticket Prices
 
 This project focuses on an **exploratory data analysis (EDA)** of railway journeys and ticket prices.
 
