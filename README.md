@@ -1,49 +1,82 @@
-# Welcome to My Data Science Portfolio 👋
+# 👋 Welcome to My Data Science Portfolio
 
-Hi, I'm Sandra!  
+Hi, I'm **Sandra**!
 
-This repository contains selected data science and machine learning projects
-developed during my MSc and personal work, with a strong focus on
-end-to-end pipelines, model training, evaluation and deployment practices.
+This repository showcases selected data science and machine learning projects developed during my MSc in Data Science and personal work. My focus is on building **end-to-end ML pipelines** with production-ready practices, including model training, evaluation, deployment, and orchestration.
 
-Each project can be explored individually. Below is a brief overview:
+Each project demonstrates different aspects of the ML lifecycle. Feel free to explore!
+
+---
 
 ## 📊 Projects
 
 ### 1. Customer Churn Prediction (End-to-End ML Pipeline)
-An end-to-end machine learning pipeline to predict customer churn, including:
-- Data preprocessing
+A **production-ready machine learning pipeline** for predicting customer churn, featuring:
+- Data preprocessing and feature engineering
 - Model training and evaluation
-- Model explainability
-- Experiment tracking
-- Orchestration with Airflow
+- Model explainability with SHAP
+- Experiment tracking with MLflow
+- Workflow orchestration with Airflow
 - Containerization with Docker
 
-*(More projects will be added soon)*
+**Tech Stack:** Python · Pandas · Scikit-learn · Docker · Airflow · MLflow · SQL
 
-## 🛠️ Tech Stack
-Python · Pandas · Scikit-learn · Docker · Airflow · MLflow · SQL
+---
 
+### 2. Microsoft Malware Prediction
+A **binary classification project** to predict whether a Windows machine will be infected by malware based on telemetry data from Windows Defender.
 
-### 2. Exploratory Analysis of Railway Ticket Prices
+This project tackles a **large-scale dataset** (8.9M rows) from a Kaggle competition, applying a complete supervised learning workflow:
+- Exploratory Data Analysis (EDA)
+- Data preprocessing and feature engineering
+- Handling class imbalance
+- Model selection and hyperparameter tuning
+- Performance evaluation with appropriate metrics
+- Model interpretation
 
-This project focuses on an **exploratory data analysis (EDA)** of railway journeys and ticket prices.
+The project was developed as part of my **Master's degree in Data Science** and demonstrates:
+- Proper ML methodology (EDA-first approach)
+- Efficient code practices (functions, list comprehensions)
+- Comprehensive model evaluation beyond standard metrics
 
-The main objective is to **understand the data before applying any predictive modeling**, by exploring price distributions, detecting anomalies, identifying patterns across routes and cities, and validating assumptions through careful analysis and visualization.
+**Tech Stack:** Python · Pandas · NumPy · Scikit-learn · Matplotlib/Seaborn
 
-The work emphasizes:
-- Data cleaning and preprocessing
-- Exploratory data analysis
-- Identification of common pitfalls in data analysis
-- Meaningful and well-designed visualizations to communicate insights
+> **Dataset:** [Microsoft Malware Prediction - Kaggle](https://www.kaggle.com/c/microsoft-malware-prediction)
 
-The project was developed as part of a **Master’s degree in Data Science** and received top evaluation for analytical depth, code structure, clarity of reasoning, and data visualizations.
+---
 
-### Tools & Technologies
-- Python
-- Pandas, NumPy
-- Plotly for data visualization
+### 3. Exploratory Analysis of Railway Ticket Prices
+An **in-depth exploratory data analysis (EDA)** of railway journeys and ticket prices, with emphasis on understanding data before modeling.
 
-> **Note:** The dataset used in this project is provided for educational purposes and may not reflect real-world railway ticket prices.
+This project focuses on:
+- Thorough data cleaning and preprocessing
+- Statistical analysis and pattern recognition
+- Anomaly detection and outlier analysis
+- Route and city-level insights
+- Data validation and assumption testing
+- Clear, publication-quality visualizations
 
-Feel free to explore the projects or contact me via LinkedIn.
+The work received **top evaluation** for analytical depth, code structure, clarity of reasoning, and data visualization quality.
+
+**Tech Stack:** Python · Pandas · NumPy · Plotly
+
+> **Note:** Dataset provided for educational purposes.
+
+---
+
+## 🛠️ Technical Skills
+
+**Languages & Libraries:** Python · Pandas · NumPy · Scikit-learn · SQL  
+**ML Ops & Tools:** Docker · Airflow · MLflow · Git  
+**Visualization:** Plotly · Matplotlib · Seaborn  
+**Practices:** End-to-End ML Pipelines · Model Explainability · Experiment Tracking
+
+---
+
+## 📫 Get in Touch
+
+Feel free to explore the projects or reach out via [LinkedIn](https://www.linkedin.com/in/your-profile)!
+
+---
+
+*More projects coming soon...*
