@@ -4,7 +4,7 @@ Hi, I'm **Sandra**!
 
 This repository showcases selected data science and machine learning projects developed during my MSc in Data Science and personal work. My focus is on building **end-to-end ML pipelines** with production-ready practices, including model training, evaluation, deployment, and orchestration.
 
-Each project demonstrates different aspects of the ML lifecycle. Feel free to explore!
+Feel free to explore!
 
 ---
 
