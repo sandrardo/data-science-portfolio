@@ -73,6 +73,29 @@ The work received **top evaluation** for analytical depth, code structure, clari
 
 ---
 
+### 4. Sales Forecasting for Capital Raise Decision (Time Series)
+
+A **time series forecasting project** developed as part of my Master's degree in Data Science, with a real business objective: predicting weekly sales for December 2023 to support a capital raise decision for a retail company.
+
+The project compares three forecasting approaches on a dataset of 394K transactions:
+
+- **SARIMAX** with automatic order selection via `auto_arima` and Black Friday as an exogenous variable
+- **Prophet** with custom monthly seasonality and UK public holidays
+- **XGBoost** with recursive forecasting, lag features, and rolling statistics
+
+Key highlights:
+- Segmented modeling (UK vs. Rest of World) based on EDA insights
+- Model interpretability with SHAP values
+- Temporal cross-validation to validate Prophet robustness
+- Confidence intervals on final predictions for business reporting
+- XGBoost achieved **11.9% MAPE** at company level, selected as the final model
+
+**Tech Stack:** Python · Pandas · Statsmodels · Prophet · XGBoost · SHAP · Matplotlib/Seaborn
+
+> **Dataset:** UCI Online Retail dataset adapted for educational purposes.
+
+---
+
 ## 📫 Get in Touch
 
 Feel free to explore the projects or reach out via [LinkedIn](https://www.linkedin.com/in/your-profile)!
