@@ -62,17 +62,6 @@ The work received **top evaluation** for analytical depth, code structure, clari
 
 > **Note:** Dataset provided for educational purposes.
 
----
-
-## 🛠️ Technical Skills
-
-**Languages & Libraries:** Python · Pandas · NumPy · Scikit-learn · SQL  
-**ML Ops & Tools:** Docker · Airflow · MLflow · Git  
-**Visualization:** Plotly · Matplotlib · Seaborn  
-**Practices:** End-to-End ML Pipelines · Model Explainability · Experiment Tracking
-
----
-
 ### 4. Sales Forecasting for Capital Raise Decision (Time Series)
 
 A **time series forecasting project** developed as part of my Master's degree in Data Science, with a real business objective: predicting weekly sales for December 2023 to support a capital raise decision for a retail company.
@@ -96,6 +85,14 @@ Key highlights:
 
 ---
 
+## 🛠️ Technical Skills
+
+**Languages & Libraries:** Python · Pandas · NumPy · Scikit-learn · SQL  
+**ML Ops & Tools:** Docker · Airflow · MLflow · Git  
+**Visualization:** Plotly · Matplotlib · Seaborn  
+**Practices:** End-to-End ML Pipelines · Model Explainability · Experiment Tracking
+
+---
 ## 📫 Get in Touch
 
 Feel free to explore the projects or reach out via [LinkedIn](https://www.linkedin.com/in/your-profile)!
