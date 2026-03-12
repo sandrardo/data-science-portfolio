@@ -87,7 +87,80 @@ generatedataset(500)
 
 This script was part of the data preparation pipeline for training a **YOLOv8** model for underwater object detection. The synthetic generation approach allows rapid dataset scaling without manual labeling, and the domain randomization (lighting, scale, orientation, noise) improves model robustness to real underwater conditions.
 
-> Related publication: *Generative Model-Driven Underwater Object Detection*, University of Ljubljana Machine Vision Laboratory.
+# Illuminant Pre-computation for Background Color Matching
+
+This MATLAB script is a preprocessing step in the synthetic dataset generation pipeline. For each real underwater background image, it computes a set of **colour adjustment parameters** that map the background's colour distribution to a neutral reference image. These parameters are later used in `generatedataset.m` to realistically match the fish's colour tone to its background before compositing.
+
+## Overview
+
+Underwater images vary significantly in colour due to light absorption, scattering, and depth. A fish rendered under neutral lab conditions would look visually inconsistent when pasted onto a greenish or bluish background. This script solves that by finding, for each background, the optimal `imadjust` parameters that minimise the colour distribution distance between the background and a reference neutral image. The result is saved as a `.mat` file alongside each background and consumed at dataset generation time.
+
+## How It Works
+
+### 1. Reference Image
+
+A single reference image (`referencecolor.jpg`) is loaded and resized to 1080p. This image represents the target neutral colour distribution that all backgrounds will be mapped towards.
+
+### 2. Per-background Optimisation
+
+For each background image in the `Background/` folder, the script:
+
+1. Resizes the background to 1080p
+2. Computes its **3D RGB histogram** (8 bins per channel)
+3. Runs `fminsearch` to find the 12 `imadjust` parameters that minimise the **Bhattacharyya distance** between the colour-adjusted background histogram and the reference histogram
+
+### 3. Parameter Structure
+
+The 12 optimised parameters define a per-channel piecewise linear intensity mapping for `imadjust`:
+
+```
+imadjust(img, [low_R, low_G, low_B; high_R, high_G, high_B],
+              [out_low_R, out_low_G, out_low_B; out_high_R, out_high_G, out_high_B])
+```
+
+All values are constrained to [0, 1], with low values strictly below their corresponding high values.
+
+### 4. Objective Function
+
+The optimisation minimises the **Bhattacharyya distance** between two normalised 3D colour histograms:
+
+```
+D = -log( Σ sqrt(p(x) · q(x)) )
+```
+
+where `p` is the histogram of the colour-adjusted background and `q` is the histogram of the reference image. A distance of 0 means identical distributions.
+
+### 5. Output
+
+For each background `<name>.jpg`, a file `<name>.jpg.mat` is saved containing:
+
+- `params` — the 12 optimised adjustment parameters
+- `fval` — the final Bhattacharyya distance achieved (lower = better match)
+
+These `.mat` files are directly consumed by `generatedataset.m` during synthetic image generation.
+
+## Usage
+
+Update the `path` variable to your data directory and run the script directly. Processing is parallelised with `parfor` across all background images.
+
+```matlab
+% Set your data path and run
+precalculate_illuminant
+```
+
+> Requires MATLAB Parallel Computing Toolbox for `parfor` acceleration. Falls back to sequential execution otherwise.
+
+## Dependencies
+
+- MATLAB Image Processing Toolbox (`imread`, `imresize`, `imadjust`)
+- MATLAB Optimisation Toolbox (`fminsearch`)
+- MATLAB Parallel Computing Toolbox (`parfor`, optional)
+
+## Context
+
+This script is part of the preprocessing pipeline for synthetic underwater training data generation. The colour matching step is critical for visual realism: without it, composited fish would exhibit obvious colour inconsistencies that could bias or confuse the YOLOv8 detector during training.
+
+> Related script: `generatedataset.m` — consumes the `.mat` files produced here to apply colour adaptation at generation time.
 
 
 Related publication: Generative Model-Driven Underwater Object Detection, University of Ljubljana Machine Vision Laboratory.
